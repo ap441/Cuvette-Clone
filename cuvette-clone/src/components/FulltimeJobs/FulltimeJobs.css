@@ -1,0 +1,22 @@
+.main{
+    display: flex;
+}
+
+.leftmenu{
+    margin: 0% 10% 0% 1%;
+    padding-right: 8%;
+    border-right: 2px solid rgba(0, 0, 0, 0.1);
+    background-clip: padding-box;
+    height: 87vh;
+
+}
+
+.leftmenu ul{
+    list-style: none;
+}
+
+.leftmenu ul li{
+    margin-bottom: 10%;
+    font-size: 1.4rem;
+}
+
