@@ -1,9 +1,10 @@
-.main{
+.fulltime-main{
     display: flex;
+    flex-direction: row;
 }
 
-.leftmenu{
-    margin: 0% 10% 0% 1%;
+.fulltime-leftmenu{
+    margin: 0% 2% 0% 1%;
     padding-right: 8%;
     border-right: 2px solid rgba(0, 0, 0, 0.1);
     background-clip: padding-box;
@@ -11,12 +12,60 @@
 
 }
 
-.leftmenu ul{
+.fulltime-leftmenu ul{
     list-style: none;
 }
 
-.leftmenu ul li{
+.fulltime-leftmenu ul li{
     margin-bottom: 10%;
     font-size: 1.4rem;
 }
 
+.fulltime-ft{
+    background-color: rgb(246, 249, 248);
+    padding: 5% 5% 5% 59%;
+    margin-left: -60%;
+    width: 150%;
+    border-radius: 0 50px 50px 0;
+}
+
+.fulltime-ft:hover, .fulltime-oj:hover, .fulltime-ap:hover{
+    cursor: pointer;
+}
+
+.fulltimecontent{
+    width: 55%;
+}
+.fulltime-searchmenu{
+    margin-top: 1%;
+    padding: 4% 0% 7% 0%;
+    width:100%;
+    background-color: rgb(246, 249, 248);
+}
+
+.fulltime-searchbar{
+    margin-left: 3%;
+    width: 70%;
+    height: 30px;
+    font-size: 1rem;
+    padding-left: 1%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease; 
+}
+
+.fulltime-filters{
+    margin-left: 3%;
+    padding-left:1%;
+    width: 18%;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.fulltime-otoptions{
+    margin-top: 1%;
+}
+
+.inofficeradio{
+    margin-left: 15%;
+}
