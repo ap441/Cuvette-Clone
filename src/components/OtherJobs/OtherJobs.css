@@ -17,11 +17,33 @@
 }
 
 .Other-leftmenu ul li{
-    margin-bottom: 10%;
+    display: flex;
+    align-items: center;
     font-size: 1.4rem;
+    gap: 6%;
+    margin-bottom: 10%;
+    color: gray;
 }
 
-.Other-oj{
+
+.Other-leftmenu ul li:nth-child(2){
+    color: rgb(68, 94, 226);
+}
+
+.oj-leftojicon{
+    font-size: 1.2rem;
+    stroke-width: 1;
+    color: rgb(68, 94, 226);
+}
+
+
+.oj-leftapicon, .oj-leftfticon{
+    font-size: 1.2rem;
+    stroke-width: 1;
+    color: gray;
+}
+
+.Other-ft{
     background-color: rgb(246, 248, 255);
     padding: 5% 5% 5% 59%;
     margin-left: -60%;
@@ -31,4 +53,92 @@
 
 .Other-ft:hover, .Other-oj:hover, .Other-ap:hover{
     cursor: pointer;
-}   
+}
+
+.otherjobcontent{
+    width: 55%;
+}
+
+.other-searchmenu{
+    margin-top: 1%;
+    padding: 4% 0% 7% 0%;
+    width:100%;
+    background-color: rgb(246, 248, 255);
+}
+
+.other-searchbar{
+    margin-left: 3%;
+    width: 90%;
+    height: 30px;
+    font-size: 1rem;
+    padding-left: 1%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease; 
+}
+
+.other-rightcontent{
+    margin-left: 1%;
+    padding-left:1%;
+    width: 16%;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    height: 70%;
+    border-radius: 15px;
+    background-color: #fdf8e5;
+}
+
+.oj-jcleftcontent{
+    width: 50%;
+}
+
+.oj-jobinfo h3:nth-child(2){
+    margin-top: -7%;
+}
+.oj-jobinfo p{
+    margin-top: -7%;
+    color: gray;
+}
+
+.othertech-item {
+    display: inline-block;
+    margin-right: 2%;
+    padding: 1% 1.5% 1% 1.5%;
+    border-radius: 25px;
+    background-color: rgb(246, 248, 255);
+    font-size: 0.8rem;
+}
+
+.otherjob-card{
+    display: flex;
+    border: 2px solid rgb(246, 248, 255);
+    border-radius: 15px;
+    margin-top: 3%;
+    padding: 2%;
+}
+
+.oj-jcrightcontent{
+    margin-top: 1%;
+    width: 50%;
+    margin-left: 40%;
+}
+
+.oj-jcrightcontent p:first-child{
+    color: rgb(68, 94, 226);
+}
+
+.oj-jcrightcontent p:nth-child(2), .oj-jcrightcontent p:nth-child(3){
+    margin-top: -3%;
+}
+
+.oj-applybtn{
+    background-color: rgb(68, 94, 226);
+    color: white;
+    width: 90px;
+    height: 30px;
+    border-style: none;
+    border-radius: 5px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-left: 45%;
+}

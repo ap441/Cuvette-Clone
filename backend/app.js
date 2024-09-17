@@ -43,6 +43,28 @@ app.get('/api/jobs', async (req, res) => {
   }
 });
 
+const otherJobSchema = new mongoose.Schema({
+    title: { type: String, required: true },
+    company: { type: String, required: true },
+    location: { type: String, required: true },
+    technologies: { type: [String], required: true },
+    salaryRange: { type: String, required: true },
+    mode: { type: String, required: true },
+    applicationLink: { type: String, required: true },
+    experience: { type: String, required: true },
+}, {collection: 'otherJobs' }); 
+
+const otherJob = mongoose.model('otherJob', otherJobSchema);
+app.get('/api/otherjobs', async (req, res) => {
+  try {
+    const otherjobs = await otherJob.find();
+    console.log('Fetched jobs:', otherjobs);
+    res.json(otherjobs);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching jobs', error });
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
