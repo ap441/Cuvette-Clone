@@ -124,3 +124,100 @@
     border-style: none;
     border-radius: 5px;
 }
+
+.ft-comploc{
+    display: flex;
+    margin-top: -3.8%;
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.tech-item {
+    display: inline-block;
+    margin-right: 2%;
+    padding: 0.8% 1% 0.8% 1%;
+    border-radius: 25px;
+    background-color: rgb(246, 249, 248);
+    font-size: 0.8rem;
+}
+
+.ft-jobinfo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 8%;
+}
+  
+.ft-jobinfo p {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border-right: 2px solid rgba(0, 0, 0, 0.1);
+    padding-right: 2%;
+}
+  
+.ft-jobinfo p:last-child {
+    border-right: none;
+}
+
+.ft-jobinfo label{
+    color: gray;
+}
+
+.ft-jobappli{
+    display: flex;
+    width: 100%;
+
+}
+
+.jobappli-left{
+    color: blue;
+    width: 50%;
+}
+
+.jobappli-left label{
+    font-weight: 600;
+}
+
+.jobappli-right{
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+    gap: 5%;
+}
+
+.jobappliapplybtn{
+    background-color: blue;
+    color: white;
+    width: 120px;
+    height: 40px;
+    border-style: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.viewdbtn{
+    background-color: white;
+    width: 120px;
+    height: 40px;
+    border-style: none;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 1.1rem;
+
+}
+
+.job-card{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 2%;
+    margin: 2% 0 2% 0;
+}
+
+
+
+
+
+
+
+  
