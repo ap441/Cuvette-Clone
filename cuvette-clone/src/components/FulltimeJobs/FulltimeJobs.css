@@ -60,6 +60,11 @@
     padding-left:1%;
     width: 18%;
     border: 2px solid rgba(0, 0, 0, 0.1);
+    height: 70%;
+}
+
+.fulltime-filters h3{
+    margin-top: 15%;
 }
 
 .fulltime-otoptions{
@@ -68,4 +73,54 @@
 
 .inofficeradio{
     margin-left: 15%;
+}
+
+.fulltime-workexp{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.workexpselect{
+    margin-top: 2%;
+    width: 85%;
+    height: 30px;
+    font-size: 1.02rem;
+}
+
+.fulltime-minsalary{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.minsalaryrange{
+    width: 90%;
+    margin-top: 2%;
+}
+
+.minsalarybuttons{
+    margin-top: 2%;
+    margin-left: 40%;
+    margin-bottom: 15%;
+}
+
+.minsalaryapply{
+    margin-left: 4%;
+    background-color: blue;
+    color: white;
+    width: 40%;
+    height: 35px;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.minsalaryclear{
+    margin-left: 4%;
+    background-color: rgb(246, 249, 248);
+    color: blue;
+    width: 40%;
+    height: 35px;
+    border-style: none;
+    border-radius: 5px;
 }
