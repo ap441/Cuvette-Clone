@@ -2,6 +2,8 @@ import "./FulltimeJobs.css";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { FiBriefcase } from "react-icons/fi";
+import { IoDocumentOutline } from "react-icons/io5";
 
 interface Job {
   title: string;
@@ -48,12 +50,12 @@ function FulltimeJobs() {
     <div className="fulltime-main">
       <div className="fulltime-leftmenu">
         <ul>
-          <li className="fulltime-ft">Fulltime Jobs</li>
+          <li className="fulltime-ft"><FiBriefcase className="ft-leftfticon"/> Fulltime Jobs</li>
           <li className="fulltime-oj" onClick={() => navigate("/otherjobs")}>
-            Other Jobs
+          <FiBriefcase className="ft-leftojicon"/> Other Jobs
           </li>
           <li className="fulltime-ap" onClick={() => navigate("/applied")}>
-            Applied
+            <IoDocumentOutline className="ft-leftapicon"/> Applied
           </li>
         </ul>
       </div>
@@ -71,51 +73,54 @@ function FulltimeJobs() {
 
         <div className="fulltime-job-list">
           {filteredJobs.map((job, index) => (
-            <div key={index} className="job-card">
-              <h3>{job.title}</h3>
-              <div className="ft-comploc">
-                <p className="ft-company">{job.company}&nbsp;|&nbsp;</p>
-                <p>{job.location}</p>
-              </div>
-              <p className="ft-jobtechs">
-                {job.technologies.map((tech, index) => (
-                  <span key={index} className={`tech-item tech-${index}`}>
-                    {tech}
-                  </span>
-                ))}
-              </p>
+            <fieldset className="ft-jobcardborder">
+              <legend className="jclegend">{job.mode}</legend>
+              <div key={index} className="job-card">
+                <h3>{job.title}</h3>
+                <div className="ft-comploc">
+                  <p className="ft-company">{job.company}&nbsp;|&nbsp;</p>
+                  <p>{job.location}</p>
+                </div>
+                <p className="ft-jobtechs">
+                  {job.technologies.map((tech, index) => (
+                    <span key={index} className={`tech-item tech-${index}`}>
+                      {tech}
+                    </span>
+                  ))}
+                </p>
 
-              <div className="ft-jobinfo">
-                <p>
+                <div className="ft-jobinfo">
+                  <p>
                     <label>Job Offer</label>
                     {job.salaryRange}
-                </p>
-                <p>
+                  </p>
+                  <p>
                     <label>Start Date</label>
                     {job.startDate}
-                </p>
-                <p>
+                  </p>
+                  <p>
                     <label>#Openings</label>
                     {job.openings}
-                </p>
-                <p>
+                  </p>
+                  <p>
                     <label>Experience</label>
                     {job.experience}
-                </p>
-              </div>
-              <div className="ft-jobappli">
-                <div className="jobappli-left">
+                  </p>
+                </div>
+                <div className="ft-jobappli">
+                  <div className="jobappli-left">
                     <label>100+ applicants</label>
                     <p>
-                        Apply by {job.applyBy} | Posted {job.postedTime}
+                      Apply by {job.applyBy} | Posted {job.postedTime}
                     </p>
-                </div>
-                <div className="jobappli-right">
+                  </div>
+                  <div className="jobappli-right">
                     <button className="viewdbtn">View Details</button>
                     <button className="jobappliapplybtn">Apply Now</button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </fieldset>
           ))}
         </div>
       </div>
