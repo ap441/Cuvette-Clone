@@ -1,6 +1,6 @@
 # React + TypeScript + Vite + MongoDB Atlas
 
-#How to run this project:
+How to run this project:
 1. Clone the Repo:
   ```js
 git clone https://github.com/ap441/Cuvette-Clone.git
