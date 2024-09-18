@@ -19,6 +19,8 @@ npm run dev
 ```
 5. Just follow the link and the app should be up
 
+## Note: If the database does not connect try changing the port to whatever port your device's backend server runs on in app.js(line 70)
+
 ScreenShots:
 ![image](https://github.com/user-attachments/assets/555d6ca5-d99c-4d45-93e5-65faf4b69100)
 ![image](https://github.com/user-attachments/assets/489ae719-8076-4d41-981f-5a8d3f491983)
