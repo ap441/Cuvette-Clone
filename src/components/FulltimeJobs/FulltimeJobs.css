@@ -54,6 +54,14 @@
     cursor: pointer;
 }
 
+.ojlabel{
+    font-size: 0.8rem;
+    background-color: #2ec971;
+    color: white;
+    padding: 1% 4% 1% 4%;
+    border-radius: 5px;
+}
+
 .fulltimecontent{
     width: 55%;
 }
@@ -250,6 +258,9 @@
     border-radius: 5px;
 }
 
+button{
+    cursor: pointer;
+}
 
 
 

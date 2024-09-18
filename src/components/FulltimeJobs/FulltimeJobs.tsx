@@ -26,6 +26,7 @@ function FulltimeJobs() {
   const navigate = useNavigate();
   const [jobs, setJobs] = useState<Job[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isRemote, setIsRemote] = useState();
 
   useEffect(() => {
     axios
@@ -46,13 +47,18 @@ function FulltimeJobs() {
       )
   );
 
+  const modeFilteredJobs = jobs.filter(
+    (job) =>
+      job.isRemote
+  );
+
   return (
     <div className="fulltime-main">
       <div className="fulltime-leftmenu">
         <ul>
           <li className="fulltime-ft"><FiBriefcase className="ft-leftfticon"/> Fulltime Jobs</li>
           <li className="fulltime-oj" onClick={() => navigate("/otherjobs")}>
-          <FiBriefcase className="ft-leftojicon"/> Other Jobs
+          <FiBriefcase className="ft-leftojicon"/> Other Jobs <label className="ojlabel">New</label>
           </li>
           <li className="fulltime-ap" onClick={() => navigate("/applied")}>
             <IoDocumentOutline className="ft-leftapicon"/> Applied
@@ -162,7 +168,7 @@ function FulltimeJobs() {
               max="12"
             />
             <div className="minsalarybuttons">
-              <button className="minsalaryclear" type="submit">
+              <button className="minsalaryclear" type="submit" >
                 Clear
               </button>
               <button className="minsalaryapply" type="submit">

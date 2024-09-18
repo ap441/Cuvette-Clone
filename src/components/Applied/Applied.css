@@ -63,3 +63,77 @@
     padding-right: 2%;
     margin-right: 2%;
 }
+
+.ap-mcinternshipsmaincontent{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.applyinternbtn{
+    margin-left: 4%;
+    background-color: rgb(68, 94, 226);
+    color: white;
+    width: 22%;
+    height: 40px;
+    font-size: 1.1rem;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.ap-cloudicon{
+    font-size: 2rem;
+    border: 2px solid rgb(246, 248, 255);
+    padding: 2% 2% 2% 2%;
+    border-radius: 40px;
+    margin-bottom: 5%;
+}
+
+.ap-mcinternshipsmaincontent p{
+    margin-bottom: 5%;
+}
+
+.ap-mcinternships p{
+    margin-top: -1%;
+}
+
+.ap-mcnav h3:hover{
+    cursor: pointer;
+}
+
+.ap-mcjobmaincontent{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.applyjobbtn{
+    margin-left: 4%;
+    background-color: rgb(68, 94, 226);
+    color: white;
+    width: 22%;
+    height: 40px;
+    font-size: 1.1rem;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.ap-mcjobmaincontent p{
+    margin-bottom: 5%;
+}
+
+.ap-mcjobs p{
+    margin-top: -1%;
+}
+
+.ap-mcinternships{
+    display: flex;
+}
+
+.ap-mcinternleft{
+    width: 100%;
+}
