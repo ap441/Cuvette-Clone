@@ -1,13 +1,14 @@
-import "./Applied.css";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { FiBriefcase } from "react-icons/fi";
 import { IoDocumentOutline } from "react-icons/io5";
-import { useState } from "react";
-import { TfiThought } from "react-icons/tfi";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import "./Applied.css";
 
 function Applied() {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("internships");
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <div className="Applied-main">
@@ -42,6 +43,7 @@ function Applied() {
             Applied Jobs (0)
           </h3>
         </div>
+
         {activeTab === "internships" && (
           <div className="ap-mcinternships">
             <div className="ap-mcinternleft">
@@ -50,7 +52,7 @@ function Applied() {
                 from the list
               </p>
               <div className="ap-mcinternshipsmaincontent">
-                <TfiThought className="ap-cloudicon" />
+                <p className="ap-cloudicon">💭</p>
                 <h2>No Applied internships</h2>
                 <p>You have not applied to any internships yet.</p>
                 <button type="submit" className="applyinternbtn">
@@ -58,8 +60,60 @@ function Applied() {
                 </button>
               </div>
             </div>
-            <div className="ap-mcinternright">
-              <h3>How Cuvette Works?</h3>
+
+            <div
+              className={`ap-mcinternright ${isDropdownOpen ? "expanded" : ""}`}
+            >
+              <h3 onClick={() => setDropdownOpen(!isDropdownOpen)}>
+                How Cuvette Works?{" "}
+                {isDropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
+              </h3>
+
+              <div className="cuvette-steps">
+                <div className="step">
+                  <p className="step-number">01</p>
+                  <h4>Apply in Jobs/ Internships</h4>
+                  <p className="step-description">
+                    Your Jobs/ Internships will display in “Applied” section
+                  </p>
+                  <p className="step-time">~ 3 to 4 days</p>
+                </div>
+
+                <div className="step">
+                  <p className="step-number">02</p>
+                  <h4>Cuvette Profile Review</h4>
+                  <p className="step-description">
+                    Recommended <br />
+                    (Profile shared to company with “Recommended” tag)
+                    <br />
+                    Less Chances <br />
+                    (Profile is shared with company without any tag)
+                  </p>
+                  <p className="step-time">~ 3 to 4 days</p>
+                </div>
+
+                <div className="step">
+                  <p className="step-number">03</p>
+                  <h4>Company Process</h4>
+                  <p className="step-description">
+                    Shortlisted / Maybe Relevant <br />
+                    (May contact you for assignments & interviews)
+                    <br />
+                    Rejected <br />
+                    (Profile rejected by company)
+                  </p>
+                  <p className="step-time">~ 7 to 10 days</p>
+                </div>
+
+                <div className="step">
+                  <p className="step-number">04</p>
+                  <h4>Offer Letter</h4>
+                  <p className="step-description">
+                    Once all the rounds are done, company can give you an offer
+                    & get you onboard.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         )}
@@ -71,7 +125,7 @@ function Applied() {
               list
             </p>
             <div className="ap-mcjobmaincontent">
-              <TfiThought className="ap-cloudicon" />
+              <p className="ap-cloudicon">💭</p>
               <h2>No Applied jobs</h2>
               <p>You have not applied to any job yet.</p>
               <button

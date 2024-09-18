@@ -15,6 +15,7 @@ interface otherJob {
   experience: string;
   mode: string;
   applicationLink: string;
+  imgURL: string;
 }
 
 function OtherJobs() {
@@ -49,7 +50,8 @@ function OtherJobs() {
             <FiBriefcase className="oj-leftfticon" /> Fulltime Jobs
           </li>
           <li className="Other-oj">
-            <FiBriefcase className="oj-leftojicon" /> Other Jobs <label className="ojlabel">New</label> </li>
+            <FiBriefcase className="oj-leftojicon" /> Other Jobs <label className="ojlabel">New</label> 
+          </li>
           <li className="Other-ap" onClick={() => navigate("/applied")}>
             <IoDocumentOutline className="oj-leftapicon" /> Applied
           </li>
@@ -72,9 +74,23 @@ function OtherJobs() {
             <div key={index} className="otherjob-card">
               <div className="oj-jcleftcontent">
                 <div className="oj-jobinfo">
-                  <h3>{otherJob.company}</h3>
-                  <h3>{otherJob.title}</h3>
-                  <p>{otherJob.location}</p>
+                  <div className="oj-complogoname">
+                    {otherJob.imgURL ? (
+                      <img
+                        src={otherJob.imgURL}
+                        alt="logo"
+                        className="oj-complogo"
+                      />
+                    ) : (
+                      <FiBriefcase className="oj-defaulticon" />
+                    )}
+                  </div>
+
+                  <div className="oj-comptitloc">
+                    <h3>{otherJob.company}</h3>
+                    <h3>{otherJob.title}</h3>
+                    <p>{otherJob.location}</p>
+                  </div>
                 </div>
                 <p className="oj-jobtechs">
                   {otherJob.technologies.map((tech, index) => (
@@ -88,10 +104,12 @@ function OtherJobs() {
                 </p>
               </div>
               <div className="oj-jcrightcontent">
-                  <p>{otherJob.mode}</p>
-                  <p>{otherJob.salaryRange}</p>
-                  <p>Year of experience - {otherJob.experience}</p>
-                  <button type="submit" className="oj-applybtn">Apply <FaExternalLinkAlt /></button>
+                <p>{otherJob.mode}</p>
+                <p>{otherJob.salaryRange}</p>
+                <p>Year of experience - {otherJob.experience}</p>
+                <button type="submit" className="oj-applybtn">
+                  Apply <FaExternalLinkAlt />
+                </button>
               </div>
             </div>
           ))}

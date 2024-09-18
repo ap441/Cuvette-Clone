@@ -20,13 +20,21 @@ interface Job {
   mode: string;
   applicationLink: string;
   postedTime: string;
+  imgURL: string;
 }
 
 function FulltimeJobs() {
   const navigate = useNavigate();
   const [jobs, setJobs] = useState<Job[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [isRemote, setIsRemote] = useState();
+
+  const [tempOfficeType, setTempOfficeType] = useState("");
+  const [tempExperience, setTempExperience] = useState("");
+  const [tempMinSalary, setTempMinSalary] = useState(0);
+
+  const [officeType, setOfficeType] = useState("");
+  const [experience, setExperience] = useState("");
+  const [minSalary, setMinSalary] = useState(0);
 
   useEffect(() => {
     axios
@@ -39,29 +47,77 @@ function FulltimeJobs() {
       });
   }, []);
 
-  const filteredJobs = jobs.filter(
-    (job) =>
-      job.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      job.technologies.some((skill) =>
-        skill.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-  );
+  const handleOfficeTypeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTempOfficeType(e.target.value);
+  };
 
-  const modeFilteredJobs = jobs.filter(
-    (job) =>
-      job.isRemote
-  );
+  const handleExperienceChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setTempExperience(e.target.value);
+  };
+
+  const handleSalaryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTempMinSalary(parseInt(e.target.value, 10));
+  };
+
+  const applyFilters = () => {
+    setOfficeType(tempOfficeType);
+    setExperience(tempExperience);
+    setMinSalary(tempMinSalary);
+  };
+
+  const clearFilters = () => {
+    setTempOfficeType("");
+    setTempExperience("");
+    setTempMinSalary(0);
+    setOfficeType("");
+    setExperience("");
+    setMinSalary(0);
+  };
+
+  const filteredJobs = jobs
+    .filter((job) => {
+      return (
+        job.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        job.technologies.some((skill) =>
+          skill.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      );
+    })
+    .filter((job) => {
+      if (officeType === "remote") {
+        return job.isRemote;
+      } else if (officeType === "in-office") {
+        return !job.isRemote;
+      }
+      return true;
+    })
+    .filter((job) => {
+      if (experience) {
+        return job.experience.toLowerCase().includes(tempExperience.toLowerCase());
+      }
+      return true;
+    })
+    .filter((job) => {
+      const salaryMin = parseInt(
+        job.salaryRange.split("-")[0].replace(/[^\d]/g, ""),
+        10
+      );
+      return salaryMin >= minSalary;
+    });
 
   return (
     <div className="fulltime-main">
       <div className="fulltime-leftmenu">
         <ul>
-          <li className="fulltime-ft"><FiBriefcase className="ft-leftfticon"/> Fulltime Jobs</li>
+          <li className="fulltime-ft">
+            <FiBriefcase className="ft-leftfticon" /> Fulltime Jobs
+          </li>
           <li className="fulltime-oj" onClick={() => navigate("/otherjobs")}>
-          <FiBriefcase className="ft-leftojicon"/> Other Jobs <label className="ojlabel">New</label>
+            <FiBriefcase className="ft-leftojicon" /> Other Jobs{" "}
+            <label className="ojlabel">New</label>
           </li>
           <li className="fulltime-ap" onClick={() => navigate("/applied")}>
-            <IoDocumentOutline className="ft-leftapicon"/> Applied
+            <IoDocumentOutline className="ft-leftapicon" /> Applied
           </li>
         </ul>
       </div>
@@ -79,13 +135,28 @@ function FulltimeJobs() {
 
         <div className="fulltime-job-list">
           {filteredJobs.map((job, index) => (
-            <fieldset className="ft-jobcardborder">
+            <fieldset className="ft-jobcardborder" key={index}>
               <legend className="jclegend">{job.mode}</legend>
-              <div key={index} className="job-card">
-                <h3>{job.title}</h3>
-                <div className="ft-comploc">
-                  <p className="ft-company">{job.company}&nbsp;|&nbsp;</p>
-                  <p>{job.location}</p>
+              <div className="job-card">
+                <div className="ft-compinfo">
+                  <div className="ft-companylogo">
+                    {job.imgURL ? (
+                      <img
+                        src={job.imgURL}
+                        alt="logo"
+                        className="ft-complogo"
+                      />
+                    ) : (
+                      <FiBriefcase className="ft-complogo-icon" />
+                    )}
+                  </div>
+                  <div className="ft-comptitloc">
+                    <h3>{job.title}</h3>
+                    <div className="ft-comploc">
+                      <p className="ft-company">{job.company}&nbsp;|&nbsp;</p>
+                      <p>{job.location}</p>
+                    </div>
+                  </div>
                 </div>
                 <p className="ft-jobtechs">
                   {job.technologies.map((tech, index) => (
@@ -136,7 +207,13 @@ function FulltimeJobs() {
         <div className="officetype">
           <label>Office Type</label>
           <div className="fulltime-otoptions">
-            <input type="radio" name="office" value="remote" />
+            <input
+              type="radio"
+              name="office"
+              value="remote"
+              checked={tempOfficeType === "remote"}
+              onChange={handleOfficeTypeChange}
+            />
             <label>Remote</label>
 
             <input
@@ -144,37 +221,50 @@ function FulltimeJobs() {
               type="radio"
               name="office"
               value="in-office"
+              checked={tempOfficeType === "in-office"}
+              onChange={handleOfficeTypeChange}
             />
             <label>In-Office</label>
           </div>
+        </div>
 
-          <div className="fulltime-workexp">
-            <label>Work Experience</label>
-            <select className="workexpselect" name="Work Experience">
-              <option value="Select Experience">Select Experience</option>
-              <option value="Intern">Intern</option>
-              <option value="2+ Years">2+ Years</option>
-              <option value="4+ Years">4+ Years</option>
-            </select>
-          </div>
+        <div className="fulltime-workexp">
+          <label>Work Experience</label>
+          <select
+            className="workexpselect"
+            name="Work Experience"
+            value={tempExperience}
+            onChange={handleExperienceChange}
+          >
+            <option value="">Select Experience</option>
+            <option value="0-3 years">0-3 years</option>
+            <option value="3+ years">3+ years</option>
+          </select>
+        </div>
 
-          <div className="fulltime-minsalary">
-            <label>Min Salary</label>
+        <div className="fulltime-minsalary">
+          <label>Min Salary</label>
+          <div className="minsalary-container">
             <input
               type="range"
               className="minsalaryrange"
               name="minsalary"
               min="0"
               max="12"
+              value={tempMinSalary}
+              onChange={handleSalaryChange}
             />
-            <div className="minsalarybuttons">
-              <button className="minsalaryclear" type="submit" >
-                Clear
-              </button>
-              <button className="minsalaryapply" type="submit">
-                Apply
-              </button>
+            <div className="minsalary-output">
+              <span>₹ {tempMinSalary} LPA</span>
             </div>
+          </div>
+          <div className="minsalarybuttons">
+            <button className="minsalaryclear" onClick={clearFilters}>
+              Clear
+            </button>
+            <button className="minsalaryapply" onClick={applyFilters}>
+              Apply
+            </button>
           </div>
         </div>
       </div>

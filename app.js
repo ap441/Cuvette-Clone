@@ -28,7 +28,8 @@ const jobSchema = new mongoose.Schema({
     isRemote: { type: Boolean, required: true },
     mode: { type: String, required: true },
     applicationLink: { type: String, required: true },
-    postedTime: { type: String }
+    postedTime: { type: String },
+    imgURL: { type: String, required: true }
 }, { collection: 'jobListings' });
 
 const Job = mongoose.model('Job', jobSchema);
@@ -52,6 +53,7 @@ const otherJobSchema = new mongoose.Schema({
     mode: { type: String, required: true },
     applicationLink: { type: String, required: true },
     experience: { type: String, required: true },
+    imgURL: { type: String, required: true },
 }, {collection: 'otherJobs' }); 
 
 const otherJob = mongoose.model('otherJob', otherJobSchema);
