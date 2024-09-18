@@ -49,8 +49,7 @@ function OtherJobs() {
             <FiBriefcase className="oj-leftfticon" /> Fulltime Jobs
           </li>
           <li className="Other-oj">
-            <FiBriefcase className="oj-leftojicon" /> Other Jobs
-          </li>
+            <FiBriefcase className="oj-leftojicon" /> Other Jobs </li>
           <li className="Other-ap" onClick={() => navigate("/applied")}>
             <IoDocumentOutline className="oj-leftapicon" /> Applied
           </li>

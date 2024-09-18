@@ -23,6 +23,10 @@
     gap: 6%;
     margin-bottom: 10%;
     color: gray;
+    padding: 5% 5% 5% 59%;
+    margin-left: -60%;
+    width: 150%;
+    border-radius: 0 50px 50px 0;
 }
 
 .fulltime-leftmenu ul li:first-child{
@@ -44,10 +48,6 @@
 
 .fulltime-ft{
     background-color: rgb(246, 248, 255);
-    padding: 5% 5% 5% 59%;
-    margin-left: -60%;
-    width: 150%;
-    border-radius: 0 50px 50px 0;
 }
 
 .fulltime-ft:hover, .fulltime-oj:hover, .fulltime-ap:hover{
