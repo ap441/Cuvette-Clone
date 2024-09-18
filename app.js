@@ -4,9 +4,9 @@ import cors from 'cors';
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
+
 
 const mongoURI = "mongodb+srv://pateladitya441:brraadju4@cluster1.p0vvc.mongodb.net/jobsDB?retryWrites=true&w=majority";
 
