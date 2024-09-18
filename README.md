@@ -1,4 +1,4 @@
-# React + TypeScript + Vite + MongoDB Atls
+# React + TypeScript + Vite + MongoDB Atlas
 
 #How to run this project:
 1. Clone the Repo:
