@@ -1,6 +1,33 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + MongoDB Atls
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#How to run this project:
+1. Clone the Repo:
+  ```js
+git clone https://github.com/ap441/Cuvette-Clone.git
+```
+2. Install the necessary dependencies:
+```js
+npm install
+```
+3. Run the Server in a powershell in the project's directory:
+```js
+node app.js
+```
+4. In another powershell in the same directory start the local server without disturbing the backend:
+```js
+npm run dev
+```
+5. Just follow the link and the app should be up
+
+ScreenShots:
+![image](https://github.com/user-attachments/assets/555d6ca5-d99c-4d45-93e5-65faf4b69100)
+![image](https://github.com/user-attachments/assets/489ae719-8076-4d41-981f-5a8d3f491983)
+![image](https://github.com/user-attachments/assets/7b9b96b2-dcf4-4907-9337-b672939b494a)
+![image](https://github.com/user-attachments/assets/5c8411b7-95ef-4c71-8bcf-dc7b2d0e7a33)
+![image](https://github.com/user-attachments/assets/9375e3d6-3c23-4597-934b-99eadcefd095)
+![image](https://github.com/user-attachments/assets/dc4fbb24-a482-4b3e-8f81-916ab8c0155e)
+
+
 
 Currently, two official plugins are available:
 
