@@ -36,9 +36,11 @@ function FulltimeJobs() {
   const [experience, setExperience] = useState("");
   const [minSalary, setMinSalary] = useState(0);
 
+  const apiUrl = "https://cuvette-clone-f7ni.vercel.app/api/jobs";
+
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/jobs")
+      .get(apiUrl)
       .then((response) => {
         setJobs(response.data);
       })
