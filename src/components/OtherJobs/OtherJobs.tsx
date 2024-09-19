@@ -23,7 +23,7 @@ function OtherJobs() {
   const [otherjobs, setotherJobs] = useState<otherJob[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const apiUrl = "https://cuvette-clone-f7ni.vercel.app/api/jobs";
+  const apiUrl = "https://cuvette-clone-f7ni.vercel.app/api/otherjobs";
 
   useEffect(() => {
     axios
