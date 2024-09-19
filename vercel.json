@@ -7,8 +7,7 @@
     },
     {
       "src": "src",
-      "use": "@vercel/static",
-      "command": "vite build"
+      "use": "@vercel/static"
     }
   ],
   "routes": [
