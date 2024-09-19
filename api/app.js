@@ -7,10 +7,12 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://cuvette-clone-f7ni.vercel.app", 
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
+}));
 app.use(express.json());
-
-console.log('Mongo URI:', process.env.MONGO_URI);
 
 const mongoURI = process.env.MONGO_URI; 
 
