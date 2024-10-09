@@ -1,9 +1,9 @@
-.Other-main{
+.Other-main {
     display: flex;
     flex-direction: row;
 }
 
-.Other-leftmenu{
+.Other-leftmenu {
     position: sticky;
     top: 0;
     margin: 0% 2% 0% 1%;
@@ -11,14 +11,13 @@
     border-right: 2px solid rgba(0, 0, 0, 0.1);
     background-clip: padding-box;
     height: 87vh;
-
 }
 
-.Other-leftmenu ul{
+.Other-leftmenu ul {
     list-style: none;
 }
 
-.Other-leftmenu ul li{
+.Other-leftmenu ul li {
     display: flex;
     align-items: center;
     font-size: 1.4rem;
@@ -31,44 +30,70 @@
     border-radius: 0 50px 50px 0;
 }
 
-
-.Other-leftmenu ul li:nth-child(2){
+.Other-leftmenu ul li:nth-child(2) {
     color: rgb(68, 94, 226);
     background-color: rgb(246, 248, 255);
 }
 
-
-.oj-leftojicon{
+.oj-leftojicon {
     font-size: 1.2rem;
     stroke-width: 1;
     color: rgb(68, 94, 226);
 }
 
-
-.oj-leftapicon, .oj-leftfticon{
+.oj-leftapicon,
+.oj-leftfticon {
     font-size: 1.2rem;
     stroke-width: 1;
     color: gray;
 }
 
-.Other-ft:hover, .Other-oj:hover, .Other-ap:hover{
+.Other-ft:hover,
+.Other-oj:hover,
+.Other-ap:hover {
     cursor: pointer;
 }
 
-.otherjobcontent{
+.otherjobcontent {
     width: 55%;
 }
 
-.other-searchmenu{
+.other-tabs {
+    display: flex; /* Display tabs as a row */
+    justify-content: space-around;
+    background-color: rgb(246, 248, 255);
+    padding: 10px 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.other-tabs button {
+    flex: 1; /* Make buttons equal width */
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: gray;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.other-tabs button.active {
+    color: rgb(68, 94, 226);
+    font-weight: bold; /* Make active tab bold */
+    border-bottom: 2px solid rgb(68, 94, 226);
+}
+
+.other-searchmenu {
     position: sticky;
     top: 0;
     margin-top: 1%;
     padding: 4% 0% 7% 0%;
-    width:100%;
+    width: 100%;
     background-color: rgb(246, 248, 255);
 }
 
-.other-searchbar{
+.other-searchbar {
     margin-left: 3%;
     width: 90%;
     height: 30px;
@@ -76,15 +101,15 @@
     padding-left: 1%;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
-    transition: box-shadow 0.3s ease; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
 
-.other-rightcontent{
+.other-rightcontent {
     position: sticky;
     top: 0;
     margin-left: 1%;
-    padding-left:1%;
+    padding-left: 1%;
     width: 16%;
     border: 2px solid rgba(0, 0, 0, 0.1);
     height: 70%;
@@ -92,18 +117,19 @@
     background-color: #fdf8e5;
 }
 
-.oj-jcleftcontent{
+.oj-jcleftcontent {
     width: 50%;
 }
 
-.oj-jobinfo{
+.oj-jobinfo {
     display: flex;
 }
 
-.oj-comptitloc h3:nth-child(2){
+.oj-comptitloc h3:nth-child(2) {
     margin-top: -12%;
 }
-.oj-comptitloc p{
+
+.oj-comptitloc p {
     margin-top: -12%;
     color: gray;
 }
@@ -117,7 +143,7 @@
     font-size: 0.8rem;
 }
 
-.otherjob-card{
+.otherjob-card {
     display: flex;
     border: 2px solid rgb(246, 248, 255);
     border-radius: 15px;
@@ -125,21 +151,22 @@
     padding: 2%;
 }
 
-.oj-jcrightcontent{
+.oj-jcrightcontent {
     margin-top: 1%;
     width: 50%;
     margin-left: 40%;
 }
 
-.oj-jcrightcontent p:first-child{
+.oj-jcrightcontent p:first-child {
     color: rgb(68, 94, 226);
 }
 
-.oj-jcrightcontent p:nth-child(2), .oj-jcrightcontent p:nth-child(3){
+.oj-jcrightcontent p:nth-child(2),
+.oj-jcrightcontent p:nth-child(3) {
     margin-top: -3%;
 }
 
-.oj-applybtn{
+.oj-applybtn {
     background-color: rgb(68, 94, 226);
     color: white;
     width: 90px;
@@ -151,18 +178,18 @@
     margin-left: 45%;
 }
 
-.oj-complogo{
+.oj-complogo {
     width: 80%;
     height: 80%;
     border-radius: 25px;
     object-fit: contain;
 }
 
-.oj-complogoname{
+.oj-complogoname {
     width: 30%;
 }
 
-.oj-defaulticon{
+.oj-defaulticon {
     width: 70%;
     height: 70%;
     border: 2px solid rgb(246, 248, 255);
@@ -170,4 +197,41 @@
     border-radius: 50%;
     object-fit: contain;
     color: gray;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .Other-leftmenu {
+        display: none; /* Hide left menu in mobile layout */
+    }
+
+    .other-tabs {
+        display: flex; /* Show tabs in mobile layout */
+    }
+
+    .otherjobcontent {
+        width: 100%; /* Make job content full width */
+    }
+
+    .other-rightcontent {
+        display: none; /* Hide right content in mobile layout */
+    }
+}
+
+@media (min-width: 769px) {
+    .Other-leftmenu {
+        display: flex; /* Show left menu in desktop layout */
+    }
+
+    .other-tabs {
+        display: none; /* Hide tabs in desktop layout */
+    }
+
+    .otherjobcontent {
+        width: 55%; /* Maintain width for desktop layout */
+    }
+
+    .other-rightcontent {
+        width: 16%; /* Maintain width for right content */
+    }
 }

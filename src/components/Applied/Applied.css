@@ -38,6 +38,33 @@
     cursor: pointer;
 }
 
+.applied-tabs {
+    display: flex; /* Display tabs as a row */
+    justify-content: space-around;
+    background-color: rgb(246, 248, 255);
+    padding: 10px 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.applied-tabs button {
+    flex: 1; /* Make buttons equal width */
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: gray;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.applied-tabs button.active {
+    color: rgb(68, 94, 226);
+    font-weight: bold; /* Make active tab bold */
+    border-bottom: 2px solid rgb(68, 94, 226);
+}
+
+
 .ap-leftapicon{
     font-size: 1.2rem;
     stroke-width: 1;
@@ -227,4 +254,22 @@
 .ap-mcnav h3:hover {
     color: rgb(68, 94, 226);
 }
-  
+
+@media (max-width: 768px) {
+    .Applied-leftmenu {
+        display: none; /* Hide left menu in mobile layout */
+    }
+    .ap-mcinternright{
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .Applied-leftmenu {
+        display: flex; /* Show left menu in desktop layout */
+    }
+
+    .applied-tabs {
+        display: none; /* Hide tabs in desktop layout */
+    }
+}

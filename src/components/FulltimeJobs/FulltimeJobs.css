@@ -1,9 +1,11 @@
-.fulltime-main{
+/* General layout for desktop */
+.fulltime-main {
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
-.fulltime-leftmenu{
+.fulltime-leftmenu {
     position: sticky;
     top: 0;
     margin: 0% 2% 0% 1%;
@@ -11,14 +13,13 @@
     border-right: 2px solid rgba(0, 0, 0, 0.1);
     background-clip: padding-box;
     height: 87vh;
-
 }
 
-.fulltime-leftmenu ul{
+.fulltime-leftmenu ul {
     list-style: none;
 }
 
-.fulltime-leftmenu ul li{
+.fulltime-leftmenu ul li {
     display: flex;
     align-items: center;
     font-size: 1.4rem;
@@ -31,32 +32,31 @@
     border-radius: 0 50px 50px 0;
 }
 
-.fulltime-leftmenu ul li:first-child{
+.fulltime-leftmenu ul li:first-child {
     color: rgb(68, 94, 226);
 }
 
-.ft-leftfticon{
+.ft-leftfticon {
     font-size: 1.2rem;
     stroke-width: 1;
     color: rgb(68, 94, 226);
 }
 
-
-.ft-leftapicon, .ft-leftojicon{
+.ft-leftapicon, .ft-leftojicon {
     font-size: 1.2rem;
     stroke-width: 1;
     color: gray;
 }
 
-.fulltime-ft{
+.fulltime-ft {
     background-color: rgb(246, 248, 255);
 }
 
-.fulltime-ft:hover, .fulltime-oj:hover, .fulltime-ap:hover{
+.fulltime-ft:hover, .fulltime-oj:hover, .fulltime-ap:hover {
     cursor: pointer;
 }
 
-.ojlabel{
+.ojlabel {
     font-size: 0.8rem;
     background-color: #2ec971;
     color: white;
@@ -64,83 +64,86 @@
     border-radius: 5px;
 }
 
-.fulltimecontent{
+.fulltimecontent {
     width: 55%;
 }
-.fulltime-searchmenu{
+
+.fulltime-searchmenu {
     position: sticky;
     top: 0;
     margin-top: 1%;
     padding: 4% 0% 7% 0%;
-    width:100%;
+    width: 100%;
     background-color: rgb(246, 248, 255);
 }
 
-.fulltime-searchbar{
-    margin-left: 3%;
-    width: 90%;
+.fulltime-searchbar {
+    width: 80%; /* Ensure the search bar takes the full width */
+    max-width: 100%; /* Prevent overflow */
     height: 30px;
     font-size: 1rem;
     padding-left: 1%;
+    margin-left: 5%;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
-    transition: box-shadow 0.3s ease; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    box-sizing: border-box; /* Include padding and border in the total width */
 }
 
-.fulltime-filters{
+.fulltime-filters {
     position: sticky;
     top: 0;
     margin-left: 3%;
-    padding-left:1%;
+    padding-left: 1%;
     width: 18%;
     border: 2px solid rgba(0, 0, 0, 0.1);
     height: 70%;
 }
 
-.fulltime-filters h3{
+.fulltime-filters h3 {
     margin-top: 15%;
 }
 
-.fulltime-otoptions{
+.fulltime-otoptions {
     margin-top: 1%;
 }
 
-.inofficeradio{
+.inofficeradio {
     margin-left: 15%;
 }
 
-.fulltime-workexp{
+.fulltime-workexp {
     display: flex;
     flex-direction: column;
     margin-top: 5%;
 }
 
-.workexpselect{
+.workexpselect {
     margin-top: 2%;
     width: 85%;
     height: 30px;
     font-size: 1.02rem;
 }
 
-.fulltime-minsalary{
+.fulltime-minsalary {
     display: flex;
     flex-direction: column;
     margin-top: 5%;
 }
 
-.minsalaryrange{
+.minsalaryrange {
     width: 90%;
     margin-top: 2%;
 }
 
-.minsalarybuttons{
+.minsalarybuttons {
     margin-top: 2%;
     margin-left: 40%;
     margin-bottom: 15%;
 }
 
-.minsalaryapply{
+.minsalaryapply {
     margin-left: 4%;
     background-color: blue;
     color: white;
@@ -150,7 +153,7 @@
     border-radius: 5px;
 }
 
-.minsalaryclear{
+.minsalaryclear {
     margin-left: 4%;
     background-color: rgb(246, 248, 255);
     color: blue;
@@ -160,7 +163,7 @@
     border-radius: 5px;
 }
 
-.ft-comploc{
+.ft-comploc {
     display: flex;
     margin-top: -3.8%;
     font-size: 0.8rem;
@@ -182,7 +185,7 @@
     width: 100%;
     gap: 8%;
 }
-  
+
 .ft-jobinfo p {
     display: flex;
     flex-direction: column;
@@ -190,38 +193,37 @@
     border-right: 2px solid rgba(0, 0, 0, 0.1);
     padding-right: 2%;
 }
-  
+
 .ft-jobinfo p:last-child {
     border-right: none;
 }
 
-.ft-jobinfo label{
+.ft-jobinfo label {
     color: gray;
 }
 
-.ft-jobappli{
+.ft-jobappli {
     display: flex;
     width: 100%;
-
 }
 
-.jobappli-left{
+.jobappli-left {
     color: blue;
     width: 50%;
 }
 
-.jobappli-left label{
+.jobappli-left label {
     font-weight: 600;
 }
 
-.jobappli-right{
+.jobappli-right {
     display: flex;
     width: 50%;
     justify-content: flex-end;
     gap: 5%;
 }
 
-.jobappliapplybtn{
+.jobappliapplybtn {
     background-color: blue;
     color: white;
     width: 120px;
@@ -232,7 +234,7 @@
     font-weight: 600;
 }
 
-.viewdbtn{
+.viewdbtn {
     background-color: white;
     width: 120px;
     height: 40px;
@@ -240,21 +242,19 @@
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     font-size: 1.1rem;
-
 }
 
-
-.ft-jobcardborder{
+.ft-jobcardborder {
     border: 2px solid rgb(246, 248, 255);
     margin-bottom: 3%;
     border-radius: 15px;
 }
 
-.ft-jobcardborder:first-child{
+.ft-jobcardborder:first-child {
     margin-top: 3%;
 }
 
-.ft-jobcardborder legend{
+.ft-jobcardborder legend {
     display: inline-block;
     margin-left: auto;
     font-size: 1.2rem;
@@ -264,39 +264,118 @@
     border-radius: 5px;
 }
 
-button{
+button {
     cursor: pointer;
 }
 
-.ft-compinfo{
+.ft-compinfo {
     display: flex;
 }
 
-.ft-companylogo{
+.ft-companylogo {
     width: 10%;
 }
 
-.ft-complogo{
+.ft-complogo {
     width: 80%;
     height: 80%;
     border-radius: 50px;
     object-fit: contain;
 }
 
-.ft-comptitloc{
+.ft-comptitloc {
     margin-top: -2%;
 }
 
-.ft-comptitloc p{
+.ft-comptitloc p {
     margin-top: -4%;
 }
 
-.ft-complogo-icon{
-    width: 70%;
-    height: 70%;
-    border: 2px solid rgb(246, 248, 255);
-    padding: 1% 1% 1% 1%;
-    border-radius: 50%;
-    object-fit: contain;
-    color: gray;
+@media (min-width: 769px) {
+    .fulltime-tabs {
+      display: none; /* Hide tabs on desktop */
+    }
+  }
+
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .fulltime-main {
+        flex-direction: column;
+    }
+
+    .fulltime-leftmenu {
+        display: none; /* Hide left menu on mobile */
+    }
+
+    /* Tabs for mobile mode */
+    .fulltime-tabs {
+        display: flex;
+        justify-content: space-around;
+        background-color: rgb(246, 248, 255);
+        padding: 10px 0;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .fulltime-tabs button {
+        flex: 1;
+        text-align: center;
+        background-color: transparent;
+        border: none;
+        font-size: 1.2rem;
+        color: gray;
+        cursor: pointer;
+        padding: 10px;
+        border-bottom: 2px solid transparent;
+    }
+
+    .fulltime-tabs button.active {
+        color: rgb(68, 94, 226);
+        border-bottom: 2px solid rgb(68, 94, 226);
+    }
+
+    .fulltimecontent {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .fulltime-searchbar {
+        margin: 0; /* Remove any margin to prevent overflow */
+        padding-left: 5%;
+    }
+
+    .fulltime-filters {
+        width: 100%;
+        margin: 10px 0;
+        border: none;
+        border-top: 2px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .ft-jobcardborder {
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .ft-compinfo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .ft-companylogo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .ft-jobinfo {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .ft-jobappli-right {
+        justify-content: flex-start;
+        gap: 10px;
+    }
 }
+

@@ -27,6 +27,7 @@ function FulltimeJobs() {
   const navigate = useNavigate();
   const [jobs, setJobs] = useState<Job[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [activeTab, setActiveTab] = useState("fulltime");
 
   const [tempOfficeType, setTempOfficeType] = useState("");
   const [tempExperience, setTempExperience] = useState("");
@@ -109,6 +110,33 @@ function FulltimeJobs() {
 
   return (
     <div className="fulltime-main">
+      {/* Tabs for Mobile */}
+      <div className="fulltime-tabs">
+        <button 
+          className={activeTab === "fulltime" ? "active" : ""} 
+          onClick={() => {
+            setActiveTab("fulltime");
+            navigate("/fulltime");
+          }}>
+          Fulltime Jobs
+        </button>
+        <button 
+          className={activeTab === "other" ? "active" : ""} 
+          onClick={() => {
+            setActiveTab("other");
+            navigate("/otherjobs");
+          }}>
+          Other Jobs
+        </button>
+        <button 
+          className={activeTab === "applied" ? "active" : ""} 
+          onClick={() => {
+            setActiveTab("applied");
+            navigate("/applied");
+          }}>
+          Applied
+        </button>
+      </div>
       <div className="fulltime-leftmenu">
         <ul>
           <li className="fulltime-ft">

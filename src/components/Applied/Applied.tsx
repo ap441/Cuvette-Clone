@@ -29,6 +29,27 @@ function Applied() {
       </div>
 
       <div className="applied-maincontent">
+        {/* Tabs for mobile */}
+        <div className="applied-tabs">
+          <button
+            className={activeTab === "otherjobs" ? "active" : ""}
+            onClick={() => navigate("/otherjobs")}
+          >
+            Other Jobs
+          </button>
+          <button
+            className={activeTab === "applied" ? "active" : ""}
+            onClick={() => navigate("/applied")}
+          >
+            Applied
+          </button>
+          <button
+            className={activeTab === "fulltime" ? "active" : ""}
+            onClick={() => navigate("/fulltime")}
+          >
+            Fulltime Jobs
+          </button>
+        </div>
         <div className="ap-mcnav">
           <h3
             className={activeTab === "internships" ? "active-tab" : ""}
