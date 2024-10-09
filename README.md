@@ -1,5 +1,6 @@
 # React + TypeScript + Vite + MongoDB Atlas
 
+### You can view the site here -> https://cuvette-clone-f7ni.vercel.app/
 How to run this project:
 1. Clone the Repo:
   ```js
