@@ -66,7 +66,7 @@ function OtherJobs() {
         <div className="other-tabs">
           <button
             className={activeTab === "otherjobs" ? "active" : ""}
-            onClick={() => navigate("/otherjobs")}
+            onClick={() => setActiveTab("otherjobs")}
           >
             Other Jobs
           </button>
